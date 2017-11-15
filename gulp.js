@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var pug = require('gulp-pug');
+// var pug = require('gulp-pug');
 var sass = require('gulp-sass');
 var pump = require('pump');
 var concat = require('gulp-concat');
@@ -25,13 +25,13 @@ gulp.task('fonts', function() {
 
 /* Compile the source code for pug files */
 
-gulp.task('pug', function() {
-    return gulp.src('src/views/*.pug')
-       .pipe(pug({
-        pretty: true
-     }))
-       .pipe(gulp.dest('./public'))
-});
+// gulp.task('pug', function() {
+//     return gulp.src('src/views/*.pug')
+//        .pipe(pug({
+//         pretty: true
+//      }))
+//        .pipe(gulp.dest('./public'))
+// });
 
 /* Compile Sass Files */
 
@@ -46,5 +46,5 @@ gulp.task('default',function() {
     gulp.watch('sass/**/*.scss',['sass']);
 });
 
-gulp.task('default', ['pug', 'sass', 'images', 'scripts', 'fonts'], function() {
+gulp.task('default', ['sass', 'images', 'scripts', 'fonts'], function() {
 });
